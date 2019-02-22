@@ -1,0 +1,88 @@
+<app-navbar></app-navbar>
+<div class="content">
+    <div class="container">
+        <div class="col">
+            <h1 class="center-align">Cadastrar mensagem</h1>
+            <div class="col s12 m8 l12 container">
+                <div class="card white darken-1 z-index-3">
+                  <div class="card-content">
+                    <form [formGroup]="messageForm"  novalidate>
+                      <p>VALIDO ?  {{ messageForm.valid }} </p>
+                      <div class="row">
+                          <div class="input-field">
+                              <input id="name" type="text" class="validate" formControlName="name">
+                              <label for="name">Nome</label>
+                            </div>
+                      </div>
+                      <div class="row">
+                          <div class="input-field">
+                              <input id="email" type="text" class="validate" formControlName="email">
+                              <label for="email">Email</label>
+                            </div>
+                      </div>
+                              
+                     <div class="row">
+                        <label for="assunto">Assunto</label>
+                          <div class="input-field">
+
+                          <ng-select class="select" formControlName="assunto">  
+                              <option disabled selected>Assunto</option>
+                              <ng-option *ngFor="let assunto of assuntos">{{ assunto?.title }}</ng-option>
+                              
+                          </ng-select>
+                          </div>
+
+                      </div> 
+
+                      <div class="row">
+                          <div class="input-field">
+                              <input id="phone" type="text" class="validate" formControlName="phone">
+                              <label for="phone">Telefone</label>
+                            </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="input-field">
+                              <textarea id="message" class="materialize-textarea" data-length="500" formControlName="message"></textarea>
+                              <label for="message">Mensagem:   10/500 caracteres</label>
+                            </div>
+                      </div> 
+                      <br>
+                      <div class="s12 m12 l12">
+                      
+                      <div  class="right-align">
+                          <button [disabled]="!messageForm.valid" class="waves-effect waves-light btn-large blue darken-4" (click)="onSubmit(messageForm)">Cadastrar</button>
+                        </div>
+                      </div>
+
+
+                    </form>
+
+      
+                    
+                   </div>
+                </div>
+            
+            
+                <!-- close teal -->
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- close col -->
+        </div>
+    </div>
+</div>

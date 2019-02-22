@@ -1,0 +1,14 @@
+@import '../../../styles.scss';
+
+.content {
+   @include pageSettings;
+    background-image: $backgroundSplash;
+    display: flex;
+
+    .brand {
+        h1 { color: white; font-size: 150px; font-family: $fontDTS;  }
+        p {  color: white; font-size: 40px;  font-family: $fontDTS; }
+    }
+
+   
+}

@@ -1,0 +1,6 @@
+@import './../../../styles.scss';
+
+.content {
+   @include pageSettings;
+   h1 { font-weight: lighter; }
+}
