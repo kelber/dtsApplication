@@ -2,8 +2,8 @@
  
 <nav>
     <div class="nav-wrapper blue darken-3 z-depth-2">
-      <a [routerLinkActive]="['/dashboard']" class="brand-logo">DTS</a>
-      <a [routerLinkActive]="['/dashboard']" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a [routerLink]="['/']" [routerLinkActive]="['/home']" class="brand-logo">DTS</a>
+      <a [routerLink]="['/home']" [routerLinkActive]="['/home']" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down" >
         <li ><a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a></li>
         <li><a [routerLink]="['/register']" routerLinkActive="active">Cadastrar</a></li>

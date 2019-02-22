@@ -12,7 +12,7 @@ export class SplashComponent implements OnInit {
 
   ngOnInit() {
     setInterval( () => {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/home']);
     }, 3000);
   }
 
