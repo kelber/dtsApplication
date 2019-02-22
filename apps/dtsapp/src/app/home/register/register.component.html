@@ -6,46 +6,49 @@
             <div class="col s12 m8 l12">
                 <div class="card white darken-1 z-index-3">
                   <div class="card-content">
-                    <form [formGroup]="messageForm">
+                    <form [formGroup]="messageForm"  novalidate>
+                      <p>VALIDO ?  {{ messageForm.valid }} </p>
                       <div class="row">
                           <div class="input-field">
-                              <input id="name" type="text" class="validate">
+                              <input id="name" type="text" class="validate" formControlName="name">
                               <label for="name">Nome</label>
                             </div>
                       </div>
                       <div class="row">
                           <div class="input-field">
-                              <input id="email" type="text" class="validate">
+                              <input id="email" type="text" class="validate" formControlName="email">
                               <label for="email">Email</label>
                             </div>
                       </div>
-                      <div class="row">
+                       <div class="row">
                           <div class="input-field">
                               <input id="phone" type="text" class="validate">
                               <label for="phone">Telefone</label>
                             </div>
                       </div>
                       <div class="row">
-                          <select>
-                              <option value="" disabled selected>Assunto</option>
-                              <option value="1">Orçamento</option>
-                              <option value="2">Dúvida</option>
-                              <option value="3">Elogio</option>
-                              <option value="3">Reclamação</option>
+                          <select formControlName="assunto" id="assunto" required>
+                              <option disabled selected>Assunto</option>
+                              <option *ngFor="let assunto of assuntos" [value]="assunto?.title" [ngValue]="assunto?.title">{{assunto?.title}}</option>
                             </select>
+
+                          <!-- <select formControlName="assunto">
+                              <option disabled selected>Assunto</option>
+                              <option  *ngFor="let assunto of assuntos" [value]="{{assunto?.title }}" >{{ assunto?.title }}</option>
+                            </select> -->
                       </div>
 
                       <div class="row">
                           <div class="input-field">
-                              <textarea id="message" class="materialize-textarea"></textarea>
+                              <textarea id="message" class="materialize-textarea" data-length="200" formControlName="message"></textarea>
                               <label for="message">Mensagem:   200/500 caracteres</label>
                             </div>
-                      </div>
+                      </div> 
                       <br>
                       <div class="s12 m12 l12">
                       
                       <div  class="right-align">
-                          <a class="waves-effect waves-light btn-large blue darken-4">Cadastrar</a>
+                          <button [disabled]="!messageForm.valid" class="waves-effect waves-light btn-large blue darken-4" (click)="onSubmit(messageForm)">Cadastrar</button>
                         </div>
                       </div>
 

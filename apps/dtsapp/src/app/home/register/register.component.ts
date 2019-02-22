@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl, AsyncValidator } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 
 
@@ -13,12 +15,49 @@ declare var M: any;
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+
+  messageForm: FormGroup;
+  regexLetters = '^[a-záàâãéèêíïóôõöúçñ ]+$';
+  emailPattern = '/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i';
+
+  assuntos = [
+    { id: 1, title: 'Orçamento' },
+    { id: 2, title: 'Dúvida' },
+    { id: 3, title: 'Elogio' },
+    { id: 4, title: 'Reclamação' }
+  ];
+
+  constructor(private router: Router, private fb: FormBuilder ) {
+    this.messageForm = this.fb.group({
+      name: ['' ],
+      email: ['', Validators.required ],
+      assunto: [''],
+      message: ['', Validators.required ]
+
+    });
+   }
+
+
+
+
 
   ngOnInit() {
     $('select').formSelect();
     M.textareaAutoResize($('#message'));
+    $('textarea#message').characterCounter();
+
+    console.log('assuntos,', this.assuntos);
 
   }
+
+
+  onSubmit(messageForm) {
+    console.log('sended', messageForm.value);
+
+  }
+
+
+
+
 
 }
