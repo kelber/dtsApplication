@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
   onSubmit(messageForm) {
     console.log('sended', messageForm.value);
     M.toast({html: 'Mensagem cadastrada com sucesso!', classes: 'rounded'});
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/home']);
   }
 
 
