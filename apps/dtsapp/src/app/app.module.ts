@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
+import { HomeModule } from './home/home.module';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +15,9 @@ import { NxModule } from '@nrwl/nx';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NxModule.forRoot()
+    NxModule.forRoot(),
+    RouterModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
