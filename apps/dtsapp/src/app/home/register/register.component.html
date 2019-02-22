@@ -27,7 +27,8 @@
 
                           <ng-select class="select" formControlName="assunto">  
                               <option disabled selected>Assunto</option>
-                              <ng-option *ngFor="let assunto of assuntos">{{ assunto?.title }}</ng-option>
+                              <!-- <ng-option [ngValue]="assunto" *ngFor="let assunto of assuntos" >{{ assunto?.title }}</ng-option> -->
+                              <ng-option *ngFor="let assunto of assuntos" >{{ assunto?.title }}</ng-option>
                               
                           </ng-select>
                           </div>
