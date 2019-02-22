@@ -1,9 +1,9 @@
-# DtsApp
+# DTS messenger 
 
 ## Project design in XD 
 *see the project in the link* 
 
-[VEJA O PROJETO](https://xd.adobe.com/spec/c5fdd134-ba02-4a46-6bc6-3f4058ce2d57-b3cc/)
+[PROJECT](https://xd.adobe.com/spec/c5fdd134-ba02-4a46-6bc6-3f4058ce2d57-b3cc/)
 
 ### Development Steps - Branchs
 1-addingSchematics <br />
@@ -18,7 +18,7 @@
     --project message  <br />
                 -message-list <br />
                 -message-detail <br />
-    --project authentication  // todo <br />
+    --project authentication   <br />
 
 6-PWA <br />
 7-nestJS <br />
@@ -27,4 +27,5 @@
 #### Steps of development
 todo: Validate the "assunto" <br />
 todo: Create services <br />
+todo: project authentication  
 
