@@ -5,7 +5,7 @@
       <a [routerLinkActive]="['/']" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down" >
         <li ><a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a></li>
-        <li><a routerLinkActive="active">Cadastrar</a></li>
+        <li><a [routerLink]="['/register']" routerLinkActive="active">Cadastrar</a></li>
         <li><a [routerLink]="['/about']" routerLinkActive="active">Sobre</a></li>
      
       </ul>
@@ -14,7 +14,7 @@
 
   <ul class="sidenav" id="mobile-demo">
       <li><a [routerLink]="['/dashboard']"  [routerLinkActive]="['/dashboard']" routerLinkActive="active">Dashboard</a></li>
-      <li><a >Cadastrar</a></li>
+      <li><a [routerLink]="['/register']" routerLinkActive="active">Cadastrar</a></li>
       <li><a  [routerLink]="['/about']" [routerLinkActive]="['/about']" routerLinkActive="active">Sobre</a></li>
   </ul>
 
