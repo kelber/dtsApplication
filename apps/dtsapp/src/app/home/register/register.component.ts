@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl, AsyncValidator } from '@angular/forms';
+
+import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl  } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgOption } from '@ng-select/ng-select';
+
 
 
 
