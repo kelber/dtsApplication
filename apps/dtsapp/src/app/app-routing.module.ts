@@ -7,7 +7,7 @@ import { AboutComponent } from './home/about/about.component';
 
 
 const routes: Routes = [
-  {path: '', component: SplashComponent },
+  {path: '', component: DashboardComponent },
   {path: 'dashboard', component: DashboardComponent },
   {path: 'register', component: RegisterComponent },
   {path: 'about', component: AboutComponent },

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl, AsyncValidator } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgOption } from '@ng-select/ng-select';
 
 
 
@@ -29,15 +30,15 @@ export class RegisterComponent implements OnInit {
 
   constructor(private router: Router, private fb: FormBuilder ) {
     this.messageForm = this.fb.group({
-      name: ['' ],
+      name: ['',  Validators.required  ],
       email: ['', Validators.required ],
       assunto: [''],
-      message: ['', Validators.required ]
+      phone: ['', Validators.required ],
+      message: ['', Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(500) ]) ]
+
 
     });
    }
-
-
 
 
 
@@ -46,13 +47,14 @@ export class RegisterComponent implements OnInit {
     M.textareaAutoResize($('#message'));
     $('textarea#message').characterCounter();
 
-    console.log('assuntos,', this.assuntos);
 
   }
 
 
   onSubmit(messageForm) {
     console.log('sended', messageForm.value);
+    
+    console.log('assuntos,', messageForm.assunto);
 
   }
 

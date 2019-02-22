@@ -3,7 +3,7 @@
     <div class="container">
         <div class="col">
             <h1 class="center-align">Cadastrar mensagem</h1>
-            <div class="col s12 m8 l12">
+            <div class="col s12 m8 l12 container">
                 <div class="card white darken-1 z-index-3">
                   <div class="card-content">
                     <form [formGroup]="messageForm"  novalidate>
@@ -20,28 +20,31 @@
                               <label for="email">Email</label>
                             </div>
                       </div>
-                       <div class="row">
+                              
+                     <div class="row">
+                        <label for="assunto">Assunto</label>
                           <div class="input-field">
-                              <input id="phone" type="text" class="validate">
+
+                          <ng-select class="select" formControlName="assunto">  
+                              <option disabled selected>Assunto</option>
+                              <ng-option *ngFor="let assunto of assuntos">{{ assunto?.title }}</ng-option>
+                              
+                          </ng-select>
+                          </div>
+
+                      </div> 
+
+                      <div class="row">
+                          <div class="input-field">
+                              <input id="phone" type="text" class="validate" formControlName="phone">
                               <label for="phone">Telefone</label>
                             </div>
                       </div>
-                      <div class="row">
-                          <select formControlName="assunto" id="assunto" required>
-                              <option disabled selected>Assunto</option>
-                              <option *ngFor="let assunto of assuntos" [value]="assunto?.title" [ngValue]="assunto?.title">{{assunto?.title}}</option>
-                            </select>
-
-                          <!-- <select formControlName="assunto">
-                              <option disabled selected>Assunto</option>
-                              <option  *ngFor="let assunto of assuntos" [value]="{{assunto?.title }}" >{{ assunto?.title }}</option>
-                            </select> -->
-                      </div>
 
                       <div class="row">
                           <div class="input-field">
-                              <textarea id="message" class="materialize-textarea" data-length="200" formControlName="message"></textarea>
-                              <label for="message">Mensagem:   200/500 caracteres</label>
+                              <textarea id="message" class="materialize-textarea" data-length="500" formControlName="message"></textarea>
+                              <label for="message">Mensagem:   10/500 caracteres</label>
                             </div>
                       </div> 
                       <br>
