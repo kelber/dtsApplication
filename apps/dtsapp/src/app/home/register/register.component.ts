@@ -1,15 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl  } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NgOption } from '@ng-select/ng-select';
-
-
-
-
+import { MessageService } from '@dtsapp/message/src/lib/message.service';
 
 declare var $: any;
 declare var M: any;
+
 
 @Component({
   selector: 'app-register',
@@ -23,25 +19,28 @@ export class RegisterComponent implements OnInit {
   regexLetters = '^[a-záàâãéèêíïóôõöúçñ ]+$';
   emailPattern = '/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i';
 
-  assuntos = [
+  // todo: from microservice API
+   assuntos: any[] = [
     { id: 1, title: 'Orçamento' },
     { id: 2, title: 'Dúvida' },
     { id: 3, title: 'Elogio' },
     { id: 4, title: 'Reclamação' }
   ];
 
-  constructor(private router: Router, private fb: FormBuilder ) {
+  
+  constructor(private router: Router, private fb: FormBuilder, private msgService: MessageService ) {
+    this.myForm();     
+  }
+
+   myForm() {
     this.messageForm = this.fb.group({
       name: ['',  Validators.required  ],
       email: ['', Validators.required ],
       assunto: [''],
       phone: ['', Validators.required ],
       message: ['', Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(500) ]) ]
-
-
     });
    }
-
 
 
   ngOnInit() {
@@ -54,9 +53,18 @@ export class RegisterComponent implements OnInit {
 
 
   onSubmit(messageForm) {
-    console.log('sended', messageForm.value);
-    M.toast({html: 'Mensagem cadastrada com sucesso!', classes: 'rounded'});
-    this.router.navigate(['/home']);
+    if(messageForm.valid) {
+      console.log('CERTO =>', messageForm);
+      this.msgService.createMessage(messageForm)
+      M.toast({html: 'Mensagem cadastrada com sucesso!', classes: 'rounded'});
+      this.router.navigate(['/home']);
+
+    } else {
+      console.log('errado', messageForm.value);
+
+    }
+
+
   }
 
 

@@ -74,6 +74,10 @@
     "ngrx-store-freeze": "0.2.4",
     "@nrwl/schematics": "7.6.0",
     "jasmine-marbles": "0.4.0",
-    "prettier": "1.15.2"
+    "prettier": "1.15.2",
+    "@nrwl/builders": "7.6.0",
+    "jest": "^23.0.0",
+    "@types/jest": "^23.0.0",
+    "jest-preset-angular": "6.0.1"
   }
 }

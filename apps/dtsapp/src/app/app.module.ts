@@ -7,7 +7,10 @@ import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
 import { HomeModule } from './home/home.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
- 
+import { HttpClientModule } from '@angular/common/http';
+
+// Microservices
+import { MessageModule } from '@dtsapp/message/src/lib/message.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    HomeModule
+    HttpClientModule,
+    HomeModule,
+    MessageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

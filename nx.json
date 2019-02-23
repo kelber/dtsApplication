@@ -13,6 +13,9 @@
     },
     "dtsapp-e2e": {
       "tags": []
+    },
+    "message": {
+      "tags": []
     }
   }
 }

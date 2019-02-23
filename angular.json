@@ -22,10 +22,7 @@
             "main": "apps/dtsapp/src/main.ts",
             "polyfills": "apps/dtsapp/src/polyfills.ts",
             "tsConfig": "apps\\dtsapp\\tsconfig.app.json",
-            "assets": [
-              "apps/dtsapp/src/favicon.ico",
-              "apps/dtsapp/src/assets"
-            ],
+            "assets": ["apps/dtsapp/src/favicon.ico", "apps/dtsapp/src/assets"],
             "styles": [
               "node_modules/materialize-css/dist/css/materialize.css",
               "apps/dtsapp/src/styles.scss"
@@ -92,10 +89,7 @@
               "apps/dtsapp/src/styles.scss"
             ],
             "scripts": [],
-            "assets": [
-              "apps/dtsapp/src/favicon.ico",
-              "apps/dtsapp/src/assets"
-            ]
+            "assets": ["apps/dtsapp/src/favicon.ico", "apps/dtsapp/src/assets"]
           }
         },
         "lint": {
@@ -105,9 +99,7 @@
               "apps\\dtsapp\\tsconfig.app.json",
               "apps\\dtsapp\\tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -133,10 +125,39 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps\\dtsapp-e2e\\tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
+        }
+      }
+    },
+    "message": {
+      "root": "libs/message",
+      "sourceRoot": "libs/message/src",
+      "projectType": "library",
+      "prefix": "msg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/message/tsconfig.lib.json",
+              "libs/message/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/message/jest.config.js",
+            "tsConfig": "libs/message/tsconfig.spec.json",
+            "setupFile": "libs/message/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
         }
       }
     }
