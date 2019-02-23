@@ -16,16 +16,16 @@
 ##### 4-AppComponents (splash,dashboard,about) <br />
 
 ##### 5-MicroServices  <br />
-        --project message  <br />
-                -message-list <br />
-                -message-detail <br />
-        --project authentication   <br />
+        --project message  
+                -message-list 
+                -message-detail 
+        --project authentication   
 
 ##### 6-PWA <br />
 ##### 7-nestJS <br />
 
 
-#### todo: 
+### todo: 
 todo: check validation <br />
 todo: Create services with mongoDB and server nestJS <br />
 todo: microservice project authentication  
