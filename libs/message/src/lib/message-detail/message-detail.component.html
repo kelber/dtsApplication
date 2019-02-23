@@ -1,3 +1,24 @@
-<p>
-  message-detail works!
-</p>
+
+<div *ngIf="message">
+
+<div class="card white darken-1">
+  <div class="card-content">
+    <div class="row">
+      <span class="card-title center-align"> <h4>{{ message?.name }} </h4>
+        
+      </span>
+    </div>
+    <p>{{ message?.created | date: 'hh:mm'  }}</p>
+    <p><strong> {{ message?.assunto.title }} </strong></p>
+    <hr>
+    <p><i>{{ message?.message }}</i></p>
+  <!-- </div> -->
+  <div class="card-action">
+      <a class="btn waves-effect waves-light red right"><span class="valign-wrapper" (click)="delete()">Excluir</span><i
+        class="material-icons">clear</i></a>
+  <br>
+  </div>
+</div>
+
+</div>
+
