@@ -1,9 +1,10 @@
 # DTS messenger 
 
 ## Project design in XD 
-*see the project in the link* 
-
 [PROJECT](https://xd.adobe.com/spec/c5fdd134-ba02-4a46-6bc6-3f4058ce2d57-b3cc/)
+**see the project in the link**
+
+
 
 ## Development Steps - Branchs
 ##### 1-addingSchematics <br />
@@ -30,7 +31,7 @@ todo: Create services with mongoDB and server nestJS <br />
 todo: microservice project authentication  
 
 
-# Install
+## Install
 ```js
 > git clone https://github.com/kelber/dtsApplication.git
 
