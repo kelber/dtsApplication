@@ -29,3 +29,13 @@ todo: check validation <br />
 todo: Create services with mongoDB and server NESTjs <br />
 todo: project authentication  
 
+
+# Install
+```js
+> git clone https://github.com/kelber/dtsApplication.git
+
+> npm install
+
+> ng serve
+```
+
