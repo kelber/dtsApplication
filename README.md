@@ -5,7 +5,7 @@
 
 [PROJECT](https://xd.adobe.com/spec/c5fdd134-ba02-4a46-6bc6-3f4058ce2d57-b3cc/)
 
-### Development Steps - Branchs
+## Development Steps - Branchs
 ##### 1-addingSchematics <br />
 
 ##### 2-materialDesign  <br />
@@ -24,10 +24,10 @@
 ##### 7-nestJS <br />
 
 
-#### Steps of development
+#### todo: 
 todo: check validation <br />
-todo: Create services with mongoDB and server NESTjs <br />
-todo: project authentication  
+todo: Create services with mongoDB and server nestJS <br />
+todo: microservice project authentication  
 
 
 # Install
