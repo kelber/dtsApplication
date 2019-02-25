@@ -4,11 +4,9 @@
     
 </div>
  <div *ngIf="messages">
-     <div *ngFor="let msg of messages">
-         <p>{{ msg?.message  }} </p> 
-         <span>{{ msg?.created }} </span>
-        
+     <div *ngFor="let msg of (messages | async)">
+         <p>{{ msg?.assunto  }} </p> 
+         <span>{{ msg?.created }}</span>     
          <hr>
      </div>
-
 </div> 

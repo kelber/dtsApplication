@@ -37,6 +37,11 @@ todo: microservice project authentication
 
 > npm install
 
-> npm start
+> npm start 
+
+// Server + Front
+> ng serve api  // start server
+> ng serve      // start frontend dtsapp
+
 ```
 
