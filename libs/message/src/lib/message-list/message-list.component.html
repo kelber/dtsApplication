@@ -1,0 +1,14 @@
+
+<div *ngIf="!messages">
+    <p class="center-align">0 Mensagens</p>
+    
+</div>
+ <div *ngIf="messages">
+     <div *ngFor="let msg of messages">
+         <p>{{ msg?.message  }} </p> 
+         <span>{{ msg?.created }} </span>
+        
+         <hr>
+     </div>
+
+</div> 

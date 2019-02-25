@@ -37,6 +37,6 @@ todo: microservice project authentication
 
 > npm install
 
-> ng serve
+> npm start
 ```
 

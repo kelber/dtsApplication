@@ -1,5 +1,11 @@
+<div class="container">
+<div *ngIf="!message">
 
+    <h5  class="left-align">Você não tem mensagens. <a class="waves-effect waves-light blue darken-4 btn" (click)="goInsert()">Cadastrar</a></h5>
+</div>  
+</div>  
 <div *ngIf="message">
+  
 
 <div class="card white darken-1">
   <div class="card-content">

@@ -17,8 +17,8 @@ export class MessageDetailComponent implements OnInit {
   message: any;
   ngOnInit() {
     this.message = JSON.parse(localStorage.getItem('data'));
-    console.log(typeof(this.message));
-    console.log(this.message);
+    // console.log(typeof(this.message));
+    // console.log(this.message);
   }
 
   delete(message) {
@@ -27,5 +27,12 @@ export class MessageDetailComponent implements OnInit {
     this.router.navigate(['/register']);
 
   }
+
+  goInsert() {
+    this.router.navigate(['/register']);
+
+  }
+
+
 
 }
