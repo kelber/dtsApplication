@@ -5,6 +5,8 @@ import { UUID } from 'angular2-uuid';
 
 // tslint:disable-next-line: nx-enforce-module-boundaries
 import { MessageService } from '@dtsapp/message/src/lib/message.service';
+// import { AssuntosService } from 'apps/api/src/app/assuntos/assuntos.service';
+
 declare var $: any;
 declare var M: any;
 
@@ -30,7 +32,9 @@ export class RegisterComponent implements OnInit {
     { id: 4, title: 'Reclamação' }
   ];
 
-  constructor(private router: Router, private fb: FormBuilder, private msgService: MessageService ) {
+  // assuntos; 
+
+  constructor(private router: Router, private fb: FormBuilder, private msgService: MessageService) {
     this.myForm();
   }
 
@@ -52,7 +56,7 @@ export class RegisterComponent implements OnInit {
     M.textareaAutoResize($('#message'));
     $('textarea#message').characterCounter();
 
-
+    // this.assuntos = this.aS.getAssuntos();
   }
 
 
